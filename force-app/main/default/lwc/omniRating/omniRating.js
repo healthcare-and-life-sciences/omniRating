@@ -27,13 +27,53 @@
 
  */
 
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import { OmniscriptBaseMixin } from 'vlocity_ins/omniscriptBaseMixin';
 
 export default class OmniRating extends OmniscriptBaseMixin(LightningElement) {
 
+      @api size;
+      @api selectedColor;
+      @api hoverSelectedColor;
+      @api hoverNotSelectedColor;
       currentrating;
-    
+      setSize = true;
+      setColor = true;
+
+      renderedCallback() { 
+        console.log('SetSize',this.size)
+        console.log('SetColor',this.selectedColor+'-'+this.hoverNotSelectedColor+'-'+ this.hoverSelectedColor);
+       
+        this.initCSSVariables();
+        
+        /* JFYI, use a flag if you only want to run this logic on first render of the component. */
+
+    }
+
+    initCSSVariables() {
+        var css = document.body.style;
+        if((this.size != null) && (this.setSize=true))
+        {
+          css.setProperty('--size', this.size);
+        }
+        else {
+          css.setProperty('--size', '16px');
+        }
+        if((this.selectedColor != null) && (this.setColor)) {
+          css.setProperty('--selectedColor',this.selectedColor);
+          css.setProperty('--hoverSelectedColor',this.hoverSelectedColor);
+          css.setProperty('--hoverNotSelectedColor',this.hoverNotSelectedColor);
+        }else{
+          css.setProperty('--selectedColor','#ffc700');
+          css.setProperty('--hoverSelectedColor','#c59b08');
+          css.setProperty('--hoverNotSelectedColor','#deb217');
+        }
+          
+        this.setSize=false;
+        this.setColor=false;
+    }
+
+
       rating(event) {
         if (event.target.name === "rating") {
           this.currentrating = event.target.value;
