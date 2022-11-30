@@ -17,11 +17,8 @@ Allow users to rank items from an OmniScript.
 
 <h3>Configuration Steps:</h3>
 
-1. The Data Pack folder in the following GitHub repository contains the Accelerator files. Please download the Data Pack and save them to your desktop: https://github.com/healthcare-and-life-sciences/omniRating 
-2. Then, complete the following steps to import them into your Salesforce org.
-    1. To Import, in your destination Salesforce org, Click on *App Launcher* → Search for '*OmniStudio DataPacks*' and click on it.
-    2. Click on '*Installed*' and on the right side click on '*Import from*'.
-    3. Select '*From File*' - When the window opens, select the Data Pack file that you downloaded and stored on your machine. Click '*Install*'.
+1. Download the files from the following repository: https://github.com/healthcare-and-life-sciences/omniRating 
+2. Then, import the files using SFDX. For more information on SFDX, please refer to this article: https://developer.salesforce.com/tools/sfdxcli
 3. Add the CustomLWC that you installed to an OmniScript of your choosing. 
 4. Configure the custom properties for the LWC to define the size and branding. The following are the available properties which can be configured:
     1. *size* - Example value: 30px.  This will set the size of the stars
