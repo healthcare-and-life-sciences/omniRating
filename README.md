@@ -1,3 +1,4 @@
+![](images/ahlsbanner.png)
 <h1>A-HLS omniRating Documentation</h1>
 
 omniRating is a simple LWC that can be placed in an OmniScript to allow a user to rank something 1 through 5 stars.  After the user selects their ranking the LWC writes bacl to the OmniScript JSON in the form of Step:1:CustomLWC1:rating:[selected rating will show up here 1, 2, 3, 4, or 5].  Once this data is stored in the JSON you can then send it to a DataRaptor, Integration Procedure, or do whatever you like. 
